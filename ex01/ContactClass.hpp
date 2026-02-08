@@ -6,7 +6,7 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 22:51:04 by kwillian          #+#    #+#             */
-/*   Updated: 2026/02/02 23:46:23 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/02/08 16:11:45 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,30 @@
 #include <iostream>
 #include <string>
 
-class ContactClass
+class Contact
 {
     private:
+    std::string FirstName;
+    std::string LastName;
+    std::string NickName;
+    std::string PhoneNumber;
+    std::string DarkestSecret;
+    bool Initialized;
     
     public:
-    ContactClass(void);
-    ~ContactClass(void);
+    Contact(void);
+    ~Contact(void);
+    // "Setters": Funções para guardar os dados
+    void    setFirstName(std::string str);
+    void    setLastName(std::string str);
+    void    setNickName(std::string str);
+    void    setPhoneNumber(std::string str);
+    void    setDarkestSecret(std::string str);
+
+    // "Getters": Funções para ler os dados
+    std::string getFirstName();
+    std::string getLastName();
+    std::string getNickName();
 };
-
-ContactClass::ContactClass(void)
-{
-    std::cout << "The ContactClass Constructor has been called" << std::endl;
-}
-
-ContactClass::~ContactClass(void)
-{
-    std::cout << "The ContactClass Destructor has been called" << std::endl;
-}
-
 
 #endif
