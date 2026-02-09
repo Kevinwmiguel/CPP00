@@ -6,7 +6,7 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 22:37:17 by kwillian          #+#    #+#             */
-/*   Updated: 2026/02/08 15:33:01 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/02/09 09:46:33 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ class PhoneBook
     ~PhoneBook(void);
 
     int addContact();
-    int searchContacts(int i);
-    // int infoContacts();
+    void    searchContacts(int i);
+    void    infoContacts();
     // int delContact();
 };
 

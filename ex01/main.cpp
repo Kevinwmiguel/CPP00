@@ -6,7 +6,7 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 22:01:33 by kwillian          #+#    #+#             */
-/*   Updated: 2026/02/08 16:11:30 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/02/09 10:42:10 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,36 @@ int main()
 {
     PhoneBook   reprograph;
         std::string command;
+    int opts;
 
     while (true) {
         std::cout << "[1] (ADD)" << std::endl;
         std::cout << "[2] (SEARCH)" << std::endl;
-        std::cout << "[3] (EXIT)" << std::endl;
-        if (!std::getline(std::cin, command))
-            break;
-        if (command == "ADD")
-            reprograph.addContact();
-        else if (command == "SEARCH")
+        std::cout << "[3] (INFO)" << std::endl;
+        std::cout << "[4] (EXIT)" << std::endl;
+        if (!(std::cin >> opts))
+                    std::cin.clear();
+                std::cin.ignore(10000, '\n'); 
+        switch (opts)
         {
-            int opt;
-            if (!(std::cin >> opt))
-                std::cin.clear();
-            std::cin.ignore(10000, '\n'); 
-            reprograph.searchContacts(opt);
+            case 1:
+                reprograph.addContact();
+                break;
+            case 2:
+                int opt;
+                if (!(std::cin >> opt))
+                    std::cin.clear();
+                std::cin.ignore(10000, '\n'); 
+                reprograph.searchContacts(opt);
+                break;
+            case 3:
+                reprograph.infoContacts();
+                break;
+            case 4:
+                break;
         }
-        else if (command == "INFO")
+        if (opts == 4)
             break;
-        else if (command == "EXIT")
-            break;
+        return 0;
     }
 }

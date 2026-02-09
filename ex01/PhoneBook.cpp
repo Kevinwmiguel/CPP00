@@ -6,7 +6,7 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 22:37:15 by kwillian          #+#    #+#             */
-/*   Updated: 2026/02/08 16:10:59 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/02/09 10:26:03 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,33 @@ int PhoneBook::addContact()
     return 0;
 }
 
-int PhoneBook::searchContacts(int look)
+void PhoneBook::searchContacts(int look)
 {
     std::string input;
     int i = 0;
 
     while (i != look)
-    {
-        i++;    
-    }
+        i++;
     std::cout << "First Name " << book[i].getFirstName().substr(0, 9) + "." << std::endl;
     std::cout << "Last name " << book[i].getLastName() << std::endl;
     std::cout << "Last name " << book[i].getNickName() << std::endl;
-    return (0);
+}
+
+std::string formatColumn(std::string str) {
+    if (str.length() > 10) {
+        return str.substr(0, 9) + ".";
+    }
+    return str;
+}
+
+void PhoneBook::infoContacts()
+{   
+    for(int i = 0; i < 8; i++)
+    {
+        std::cout << "|" << std::setw(10) << formatColumn(book[i].getFirstName());
+        std::cout << "|" << std::setw(10) << formatColumn(book[i].getLastName());
+        std::cout << "|" << std::setw(10) << formatColumn(book[i].getNickName()) << "|" << std::endl;
+    }
 }
 
 // void    
