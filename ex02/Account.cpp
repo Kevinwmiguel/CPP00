@@ -1,38 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/02 22:37:17 by kwillian          #+#    #+#             */
-/*   Updated: 2026/02/09 17:33:10 by kwillian         ###   ########.fr       */
+/*   Created: 2026/02/09 18:02:31 by kwillian          #+#    #+#             */
+/*   Updated: 2026/02/09 18:03:47 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
-
-#include "ContactClass.hpp"
-#include <iostream>
-#include <string>
-#include <cctype>
-#include <iomanip>
-
-class PhoneBook
-{
-    private:
-        Contact book[8];
-        int     _index;
-        int     _totalSaved;
-    public:
-    
-    PhoneBook(void);
-    ~PhoneBook(void);
-
-    int     addContact();
-    void    searchContacts(int i);
-};
-
-
-#endif
+#include "Account.hpp"

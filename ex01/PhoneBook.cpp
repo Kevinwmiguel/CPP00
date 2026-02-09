@@ -6,7 +6,7 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 22:37:15 by kwillian          #+#    #+#             */
-/*   Updated: 2026/02/09 10:26:03 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/02/09 17:48:03 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,11 @@ int PhoneBook::addContact()
     std::cout << "Nick Name ";
     if (!(std::getline(std::cin, input)) || input.empty()) return 1;
     book[i].setNickName(input);
-    std::cout << "Contacto adicionado com Sucesso" << std::endl;
+    std::cout << "The contact has being added" << std::endl;
     _index++;
     if (_totalSaved < 8) _totalSaved++;
     else if (_totalSaved > 8) _totalSaved = 0;
     return 0;
-}
-
-void PhoneBook::searchContacts(int look)
-{
-    std::string input;
-    int i = 0;
-
-    while (i != look)
-        i++;
-    std::cout << "First Name " << book[i].getFirstName().substr(0, 9) + "." << std::endl;
-    std::cout << "Last name " << book[i].getLastName() << std::endl;
-    std::cout << "Last name " << book[i].getNickName() << std::endl;
 }
 
 std::string formatColumn(std::string str) {
@@ -64,16 +52,15 @@ std::string formatColumn(std::string str) {
     return str;
 }
 
-void PhoneBook::infoContacts()
-{   
-    for(int i = 0; i < 8; i++)
-    {
-        std::cout << "|" << std::setw(10) << formatColumn(book[i].getFirstName());
-        std::cout << "|" << std::setw(10) << formatColumn(book[i].getLastName());
-        std::cout << "|" << std::setw(10) << formatColumn(book[i].getNickName()) << "|" << std::endl;
-    }
-}
+void PhoneBook::searchContacts(int look)
+{
+    std::string input;
+    int i = 0;
 
-// void    
-//     int infoContacts();
-//     int delContact();
+    while (i != look)
+        i++;
+    std::cout << "|" << std::setw(10) << formatColumn(book[i].getFirstName());
+    std::cout << "|" << std::setw(10) << formatColumn(book[i].getLastName());
+    std::cout << "|" << std::setw(10) << formatColumn(book[i].getNickName()) << "|" << std::endl;
+    std::cout << "==========" << std::endl;
+}

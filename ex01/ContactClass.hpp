@@ -6,7 +6,7 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 22:51:04 by kwillian          #+#    #+#             */
-/*   Updated: 2026/02/08 16:11:45 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/02/09 17:10:05 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Contact
     std::string NickName;
     std::string PhoneNumber;
     std::string DarkestSecret;
-    bool Initialized;
     
     public:
     Contact(void);
