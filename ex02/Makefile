@@ -2,10 +2,12 @@ NAME		= Account
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Wextra -std=c++98
 
-SRCS		= Account.cpp tests.cpp
+SRCS		= tests.cpp Account.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)
+
+$(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
