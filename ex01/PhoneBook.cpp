@@ -24,7 +24,7 @@ PhoneBook::~PhoneBook()
     std::cout << "The PhoneBook Destructor has been called " << std::endl;
 }
 
-int PhoneBook::addContact()
+int PhoneBook:: addContact()
 {
     std::string input;
     
@@ -38,6 +38,12 @@ int PhoneBook::addContact()
     std::cout << "Nick Name ";
     if (!(std::getline(std::cin, input)) || input.empty()) return 1;
     book[i].setNickName(input);
+    std::cout << "Phone number: ";
+    if (!(std::getline(std::cin, input)) || input.empty()) return 1;
+    book[i].setPhoneNumber(input);
+    std::cout << "Darkest Secret: ";
+    if (!(std::getline(std::cin, input)) || input.empty()) return 1;
+    book[i].setDarkestSecret(input);
     std::cout << "The contact has being added" << std::endl;
     _index++;
     if (_totalSaved < 8) _totalSaved++;
@@ -61,6 +67,8 @@ void PhoneBook::searchContacts(int look)
         i++;
     std::cout << "|" << std::setw(10) << formatColumn(book[i].getFirstName());
     std::cout << "|" << std::setw(10) << formatColumn(book[i].getLastName());
-    std::cout << "|" << std::setw(10) << formatColumn(book[i].getNickName()) << "|" << std::endl;
+    std::cout << "|" << std::setw(10) << formatColumn(book[i].getNickName());
+    std::cout << "|" << std::setw(10) << formatColumn(book[i].getPhoneNumber());
+    std::cout << "|" << std::setw(10) << formatColumn(book[i].getDarkestSecret()) << "|" << std::endl;
     std::cout << "==========" << std::endl;
 }

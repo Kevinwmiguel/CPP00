@@ -22,7 +22,8 @@ int main(int argc, char **argv)
         {
             std::string phrase = argv[i];
             for (size_t j = 0; j < phrase.length(); j++)
-                    std::cout << (char)std::toupper(phrase[j]);
+                std::cout << (char)std::toupper(phrase[j]);
+            std::cout << " ";
         }
         std::cout << std::endl;
     }

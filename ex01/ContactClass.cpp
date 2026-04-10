@@ -59,3 +59,11 @@ void Contact::setDarkestSecret(std::string str)
 {
     this->DarkestSecret = str;
 }
+
+std::string Contact::getPhoneNumber() {
+    return (this->PhoneNumber);
+}
+
+std::string Contact::getDarkestSecret() {
+    return (this->DarkestSecret);
+}
