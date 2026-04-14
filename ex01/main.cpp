@@ -6,7 +6,7 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 22:01:33 by kwillian          #+#    #+#             */
-/*   Updated: 2026/02/09 17:53:52 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/04/14 23:06:44 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main(void)
 {
     PhoneBook   reprograph;
     std::string command;
+
     while (true) {
         std::cout << "[1] (ADD)" << std::endl;
         std::cout << "[2] (SEARCH)" << std::endl;
@@ -39,13 +40,7 @@ int main(void)
             reprograph.addContact();
         if (command == "SEARCH")
         {
-            std::cout << "index starts from 0 - 7" << std::endl;
-            int opt;
-            std::cout << " " << std::ends;
-            if (!(std::cin >> opt))
-               std::cin.clear();
-            std::cin.ignore(10000, '\n'); 
-            reprograph.searchContacts(opt);
+            reprograph.searchContacts();
         }
         if (command == "EXIT")
             return (0);
